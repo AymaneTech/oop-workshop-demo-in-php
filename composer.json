@@ -1,0 +1,21 @@
+{
+    "name": "vendor/library-mangement",
+    "description": "Library Management System with OOP principles",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "geek",
+            "email": "elmainiaymane03@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*"
+    }
+}
