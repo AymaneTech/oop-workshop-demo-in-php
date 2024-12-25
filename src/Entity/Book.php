@@ -4,15 +4,25 @@ namespace App\Entity;
 
 class Book
 {
-    private int $id;
-    private string $title;
-    private Author $author;
+    private ?int $id;
+    private ?string $title;
+    private ?Author $author;
 
-    public function __construct(int $id, string $title, Author $author)
+    public function __construct(int $id = 0, string $title = "", Author $author = null)
     {
         $this->id = $id;
         $this->title = $title;
         $this->author = $author;
+    }
+
+
+    public static function fromArray(array $data): Book
+    {
+        return new self(
+            $data['id'],
+            $data['title'],
+            new Author($data['author_id'], $data['author_name'], $data['author_bio'])
+        );
     }
 
     public function getId(): int
